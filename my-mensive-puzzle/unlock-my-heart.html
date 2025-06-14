@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unlock My Heart 💖</title>
+  <style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  padding: 30px;
+  text-align: center;
+  backdrop-filter: blur(3px) brightness(0.95);
+}
+
+  </style>
+</head>
+<body style="background: url('background.png') no-repeat center center fixed; background-size: cover; margin: 0;">
+
+  <div style="background: rgba(255, 255, 255, 0.85); padding: 30px 20px; max-width: 500px; margin: 60px auto; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center;">
+    <h1 style="color: #d63384;">💌 Unlock My Heart 💌</h1>
+    <p>Answer these sweet little questions to reveal a message just for you sayang 💖 </p>
+
+    <div class="question">
+      <p>1. What day is our mensive before?</p>
+      <input type="text" id="q1">
+    </div>
+
+    <div class="question">
+      <p>2. When does the first time Cano said "mam"?(dd/mm/yy)</p>
+      <input type="text" id="q2">
+    </div>
+
+    <div class="question">
+      <p>3. What month did we become official?</p>
+      <input type="text" id="q3">
+    </div>
+
+    <div class="question">
+      <p>4. What is the first series that we nobar?</p>
+      <input type="text" id="q4">
+    </div>
+
+     <div class="question">
+      <p>5. What does Cano like the most?</p>
+      <input type="text" id="q5">
+    </div>
+
+    
+
+    
+
+    <button onclick="checkAnswers()">Unlock 💖</button>
+
+    <div class="message" id="loveMessage">
+      <p>✨ You did it! ✨</p>
+      <p>Every little moment we’ve shared means so much to me. From our first talk to our first nobar, you’ve made even the simplest things feel special.</p>
+      <p>I’m so thankful for your love, for how you stay, listen, and care even when things aren’t perfect.</p>
+      <p>Being with you feels calm, happy, and real. You’re home to me.</p>
+      <p>Happy mensive, sayang. I love you. I love you more than words, more than time, more than anything 💝</p>
+
+      <audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+<button onclick="document.getElementById('bgMusic').play()" style="margin-top:20px;">▶️ Play Music</button>
+
+    </div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+    }
+    .question {
+      margin: 15px 0;
+    }
+    input {
+      padding: 10px;
+      border: 2px solid #ff8fab;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 300px;
+      margin-bottom: 10px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff8fab;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .message {
+      display: none;
+      margin-top: 30px;
+      font-size: 1.1em;
+      background: #ffe4ec;
+      padding: 20px;
+      border-radius: 12px;
+    }
+  </style>
+
+  <script>
+    function checkAnswers() {
+      const a1 = document.getElementById('q1').value.trim().toLowerCase();
+      const a2 = document.getElementById('q2').value.trim().toLowerCase();
+      const a3 = document.getElementById('q3').value.trim().toLowerCase();
+      const a4 = document.getElementById('q4').value.trim().toLowerCase();
+      const a5 = document.getElementById('q5').value.trim().toLowerCase();
+
+      if (a1 === 'wednesday' && a2 === '18/9/2024' && a3 === 'february' && a4 === 'the frog' && a5 === 'awis' ) {
+        document.getElementById('loveMessage').style.display = 'block';
+      } else {
+        alert('Oops! One or more answers are not quite right. Try again, love 🌸');
+      }
+    }
+  </script>
+
+  <script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = "100%";
+    heart.style.fontSize = (Math.random() * 10 + 20) + "px";
+    heart.style.animation = "floatUp 6s linear";
+    heart.style.zIndex = "0";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+  }
+
+  setInterval(createHeart, 500);
+
+  const style = document.createElement("style");
+  style.innerHTML = `
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+
+</body>
+
+</html>
